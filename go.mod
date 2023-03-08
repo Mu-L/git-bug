@@ -3,7 +3,7 @@ module github.com/MichaelMure/git-bug
 go 1.18
 
 require (
-	github.com/99designs/gqlgen v0.17.20
+	github.com/99designs/gqlgen v0.17.26
 	github.com/99designs/keyring v1.2.2
 	github.com/MichaelMure/go-term-text v0.3.1
 	github.com/ProtonMail/go-crypto v0.0.0-20210428141323-04723f9f07d7
@@ -18,23 +18,24 @@ require (
 	github.com/gorilla/mux v1.8.0
 	github.com/hashicorp/golang-lru v0.5.4
 	github.com/icrowley/fake v0.0.0-20180203215853-4178557ae428
-	github.com/mattn/go-isatty v0.0.16
+	github.com/mattn/go-isatty v0.0.17
 	github.com/phayes/freeport v0.0.0-20171002181615-b8543db493a5
 	github.com/pkg/errors v0.9.1
 	github.com/shurcooL/githubv4 v0.0.0-20190601194912-068505affed7
 	github.com/skratchdot/open-golang v0.0.0-20190402232053-79abb63cd66e
 	github.com/spf13/cobra v1.6.1
-	github.com/stretchr/testify v1.8.1
+	github.com/stretchr/testify v1.8.2
 	github.com/vektah/gqlparser/v2 v2.5.1
 	github.com/xanzy/go-gitlab v0.77.0
 	golang.org/x/crypto v0.0.0-20220131195533-30dcbda58838
 	golang.org/x/oauth2 v0.0.0-20220722155238-128564f6959c
-	golang.org/x/sync v0.0.0-20220722155255-886fb9371eb4
-	golang.org/x/sys v0.3.0
-	golang.org/x/text v0.5.0
+	golang.org/x/sync v0.1.0
+	golang.org/x/sys v0.5.0
+	golang.org/x/text v0.7.0
 )
 
 require (
+	github.com/hashicorp/golang-lru/v2 v2.0.1 // indirect
 	github.com/lithammer/dedent v1.1.0 // indirect
 	github.com/owenrumney/go-sarif v1.0.11 // indirect
 	github.com/segmentio/fasthash v1.0.3 // indirect
@@ -84,7 +85,7 @@ require (
 	github.com/mattn/go-colorable v0.1.13 // indirect
 	github.com/mattn/go-runewidth v0.0.12 // indirect
 	github.com/mitchellh/go-homedir v1.1.0 // indirect
-	github.com/mitchellh/mapstructure v1.4.1 // indirect
+	github.com/mitchellh/mapstructure v1.5.0 // indirect
 	github.com/mschoch/smat v0.2.0 // indirect
 	github.com/mtibben/percent v0.2.1 // indirect
 	github.com/philhofer/fwd v1.0.0 // indirect
@@ -98,16 +99,16 @@ require (
 	github.com/steveyen/gtreap v0.1.0 // indirect
 	github.com/stretchr/objx v0.5.0 // indirect
 	github.com/tinylib/msgp v1.1.0 // indirect
-	github.com/urfave/cli/v2 v2.8.1 // indirect
+	github.com/urfave/cli/v2 v2.24.4 // indirect
 	github.com/willf/bitset v1.1.10 // indirect
 	github.com/xanzy/ssh-agent v0.3.0 // indirect
 	github.com/xrash/smetrics v0.0.0-20201216005158-039620a65673 // indirect
 	go.etcd.io/bbolt v1.3.5 // indirect
-	golang.org/x/mod v0.6.0-dev.0.20220419223038-86c51ed26bb4 // indirect
-	golang.org/x/net v0.0.0-20220805013720-a33c5aa5df48 // indirect
-	golang.org/x/term v0.3.0 // indirect
+	golang.org/x/mod v0.8.0 // indirect
+	golang.org/x/net v0.6.0 // indirect
+	golang.org/x/term v0.5.0 // indirect
 	golang.org/x/time v0.0.0-20220722155302-e5dcc9cfc0b9 // indirect
-	golang.org/x/tools v0.1.13-0.20220803210227-8b9a1fbdf5c3 // indirect
+	golang.org/x/tools v0.6.0 // indirect
 	golang.org/x/vuln v0.0.0-20220908155419-5537ad2271a7
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
