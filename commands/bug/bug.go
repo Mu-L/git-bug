@@ -9,15 +9,14 @@ import (
 	text "github.com/MichaelMure/go-term-text"
 	"github.com/spf13/cobra"
 
-	"github.com/MichaelMure/git-bug/cache"
-	"github.com/MichaelMure/git-bug/commands/cmdjson"
-	"github.com/MichaelMure/git-bug/commands/completion"
-	"github.com/MichaelMure/git-bug/commands/execenv"
-	"github.com/MichaelMure/git-bug/entities/bug"
-	"github.com/MichaelMure/git-bug/entities/common"
-	"github.com/MichaelMure/git-bug/entity"
-	"github.com/MichaelMure/git-bug/query"
-	"github.com/MichaelMure/git-bug/util/colors"
+	"github.com/git-bug/git-bug/cache"
+	"github.com/git-bug/git-bug/commands/cmdjson"
+	"github.com/git-bug/git-bug/commands/completion"
+	"github.com/git-bug/git-bug/commands/execenv"
+	"github.com/git-bug/git-bug/entities/common"
+	"github.com/git-bug/git-bug/entity"
+	"github.com/git-bug/git-bug/query"
+	"github.com/git-bug/git-bug/util/colors"
 )
 
 type bugOptions struct {
@@ -280,7 +279,7 @@ func bugsPlainFormatter(env *execenv.Env, excerpts []*cache.BugExcerpt) error {
 func bugsOrgmodeFormatter(env *execenv.Env, excerpts []*cache.BugExcerpt) error {
 	// see https://orgmode.org/manual/Tags.html
 	orgTagRe := regexp.MustCompile("[^[:alpha:]_@]")
-	formatTag := func(l bug.Label) string {
+	formatTag := func(l common.Label) string {
 		return orgTagRe.ReplaceAllString(l.String(), "_")
 	}
 

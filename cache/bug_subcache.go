@@ -5,11 +5,12 @@ import (
 	"sort"
 	"time"
 
-	"github.com/MichaelMure/git-bug/entities/bug"
-	"github.com/MichaelMure/git-bug/entities/identity"
-	"github.com/MichaelMure/git-bug/entity"
-	"github.com/MichaelMure/git-bug/query"
-	"github.com/MichaelMure/git-bug/repository"
+	"github.com/git-bug/git-bug/entities/bug"
+	"github.com/git-bug/git-bug/entities/common"
+	"github.com/git-bug/git-bug/entities/identity"
+	"github.com/git-bug/git-bug/entity"
+	"github.com/git-bug/git-bug/query"
+	"github.com/git-bug/git-bug/repository"
 )
 
 type RepoCacheBug struct {
@@ -187,11 +188,11 @@ func (c *RepoCacheBug) Query(q *query.Query) ([]entity.Id, error) {
 // Note: in the future, a proper label policy could be implemented where valid
 // labels are defined in a configuration file. Until that, the default behavior
 // is to return the list of labels already used.
-func (c *RepoCacheBug) ValidLabels() []bug.Label {
+func (c *RepoCacheBug) ValidLabels() []common.Label {
 	c.mu.RLock()
 	defer c.mu.RUnlock()
 
-	set := map[bug.Label]interface{}{}
+	set := map[common.Label]interface{}{}
 
 	for _, excerpt := range c.excerpts {
 		for _, l := range excerpt.Labels {
@@ -199,7 +200,7 @@ func (c *RepoCacheBug) ValidLabels() []bug.Label {
 		}
 	}
 
-	result := make([]bug.Label, len(set))
+	result := make([]common.Label, len(set))
 
 	i := 0
 	for l := range set {

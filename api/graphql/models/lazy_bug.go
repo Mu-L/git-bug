@@ -4,11 +4,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/MichaelMure/git-bug/cache"
-	"github.com/MichaelMure/git-bug/entities/bug"
-	"github.com/MichaelMure/git-bug/entities/common"
-	"github.com/MichaelMure/git-bug/entity"
-	"github.com/MichaelMure/git-bug/entity/dag"
+	"github.com/git-bug/git-bug/cache"
+	"github.com/git-bug/git-bug/entities/bug"
+	"github.com/git-bug/git-bug/entities/common"
+	"github.com/git-bug/git-bug/entity"
+	"github.com/git-bug/git-bug/entity/dag"
 )
 
 // BugWrapper is an interface used by the GraphQL resolvers to handle a bug.
@@ -20,7 +20,7 @@ type BugWrapper interface {
 	Status() common.Status
 	Title() string
 	Comments() ([]bug.Comment, error)
-	Labels() []bug.Label
+	Labels() []common.Label
 	Author() (IdentityWrapper, error)
 	Actors() ([]IdentityWrapper, error)
 	Participants() ([]IdentityWrapper, error)
@@ -102,7 +102,7 @@ func (lb *lazyBug) Comments() ([]bug.Comment, error) {
 	return lb.snap.Comments, nil
 }
 
-func (lb *lazyBug) Labels() []bug.Label {
+func (lb *lazyBug) Labels() []common.Label {
 	return lb.excerpt.Labels
 }
 
@@ -180,7 +180,7 @@ func (l *loadedBug) Comments() ([]bug.Comment, error) {
 	return l.Snapshot.Comments, nil
 }
 
-func (l *loadedBug) Labels() []bug.Label {
+func (l *loadedBug) Labels() []common.Label {
 	return l.Snapshot.Labels
 }
 

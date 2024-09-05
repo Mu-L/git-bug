@@ -11,8 +11,8 @@ import (
 	"sync/atomic"
 
 	"github.com/99designs/gqlgen/graphql"
-	"github.com/MichaelMure/git-bug/api/graphql/models"
-	"github.com/MichaelMure/git-bug/entity"
+	"github.com/git-bug/git-bug/api/graphql/models"
+	"github.com/git-bug/git-bug/entity"
 	"github.com/vektah/gqlparser/v2/ast"
 )
 
@@ -62,10 +62,10 @@ func (ec *executionContext) _Identity_id(ctx context.Context, field graphql.Coll
 	}
 	res := resTmp.(entity.Id)
 	fc.Result = res
-	return ec.marshalNID2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋentityᚐId(ctx, field.Selections, res)
+	return ec.marshalNID2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋentityᚐId(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_id(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_id(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -109,7 +109,7 @@ func (ec *executionContext) _Identity_humanId(ctx context.Context, field graphql
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_humanId(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_humanId(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -150,7 +150,7 @@ func (ec *executionContext) _Identity_name(ctx context.Context, field graphql.Co
 	return ec.marshalOString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_name(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_name(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -191,7 +191,7 @@ func (ec *executionContext) _Identity_email(ctx context.Context, field graphql.C
 	return ec.marshalOString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_email(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_email(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -232,7 +232,7 @@ func (ec *executionContext) _Identity_login(ctx context.Context, field graphql.C
 	return ec.marshalOString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_login(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_login(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -276,7 +276,7 @@ func (ec *executionContext) _Identity_displayName(ctx context.Context, field gra
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_displayName(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_displayName(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -317,7 +317,7 @@ func (ec *executionContext) _Identity_avatarUrl(ctx context.Context, field graph
 	return ec.marshalOString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_avatarUrl(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_avatarUrl(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -361,7 +361,7 @@ func (ec *executionContext) _Identity_isProtected(ctx context.Context, field gra
 	return ec.marshalNBoolean2bool(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_Identity_isProtected(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_Identity_isProtected(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "Identity",
 		Field:      field,
@@ -402,10 +402,10 @@ func (ec *executionContext) _IdentityConnection_edges(ctx context.Context, field
 	}
 	res := resTmp.([]*models.IdentityEdge)
 	fc.Result = res
-	return ec.marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdgeᚄ(ctx, field.Selections, res)
+	return ec.marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdgeᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityConnection_edges(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityConnection_edges(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityConnection",
 		Field:      field,
@@ -452,10 +452,10 @@ func (ec *executionContext) _IdentityConnection_nodes(ctx context.Context, field
 	}
 	res := resTmp.([]models.IdentityWrapper)
 	fc.Result = res
-	return ec.marshalNIdentity2ᚕgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapperᚄ(ctx, field.Selections, res)
+	return ec.marshalNIdentity2ᚕgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapperᚄ(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityConnection_nodes(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityConnection_nodes(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityConnection",
 		Field:      field,
@@ -514,10 +514,10 @@ func (ec *executionContext) _IdentityConnection_pageInfo(ctx context.Context, fi
 	}
 	res := resTmp.(*models.PageInfo)
 	fc.Result = res
-	return ec.marshalNPageInfo2ᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐPageInfo(ctx, field.Selections, res)
+	return ec.marshalNPageInfo2ᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐPageInfo(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityConnection_pageInfo(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityConnection_pageInfo(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityConnection",
 		Field:      field,
@@ -571,7 +571,7 @@ func (ec *executionContext) _IdentityConnection_totalCount(ctx context.Context, 
 	return ec.marshalNInt2int(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityConnection_totalCount(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityConnection_totalCount(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityConnection",
 		Field:      field,
@@ -615,7 +615,7 @@ func (ec *executionContext) _IdentityEdge_cursor(ctx context.Context, field grap
 	return ec.marshalNString2string(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityEdge_cursor(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityEdge_cursor(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityEdge",
 		Field:      field,
@@ -656,10 +656,10 @@ func (ec *executionContext) _IdentityEdge_node(ctx context.Context, field graphq
 	}
 	res := resTmp.(models.IdentityWrapper)
 	fc.Result = res
-	return ec.marshalNIdentity2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx, field.Selections, res)
+	return ec.marshalNIdentity2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx, field.Selections, res)
 }
 
-func (ec *executionContext) fieldContext_IdentityEdge_node(ctx context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
+func (ec *executionContext) fieldContext_IdentityEdge_node(_ context.Context, field graphql.CollectedField) (fc *graphql.FieldContext, err error) {
 	fc = &graphql.FieldContext{
 		Object:     "IdentityEdge",
 		Field:      field,
@@ -897,7 +897,7 @@ func (ec *executionContext) _IdentityEdge(ctx context.Context, sel ast.Selection
 
 // region    ***************************** type.gotpl *****************************
 
-func (ec *executionContext) marshalNIdentity2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx context.Context, sel ast.SelectionSet, v models.IdentityWrapper) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentity2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx context.Context, sel ast.SelectionSet, v models.IdentityWrapper) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -907,7 +907,7 @@ func (ec *executionContext) marshalNIdentity2githubᚗcomᚋMichaelMureᚋgitᚑ
 	return ec._Identity(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNIdentity2ᚕgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapperᚄ(ctx context.Context, sel ast.SelectionSet, v []models.IdentityWrapper) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentity2ᚕgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapperᚄ(ctx context.Context, sel ast.SelectionSet, v []models.IdentityWrapper) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -931,7 +931,7 @@ func (ec *executionContext) marshalNIdentity2ᚕgithubᚗcomᚋMichaelMureᚋgit
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNIdentity2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx, sel, v[i])
+			ret[i] = ec.marshalNIdentity2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -951,11 +951,11 @@ func (ec *executionContext) marshalNIdentity2ᚕgithubᚗcomᚋMichaelMureᚋgit
 	return ret
 }
 
-func (ec *executionContext) marshalNIdentityConnection2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityConnection(ctx context.Context, sel ast.SelectionSet, v models.IdentityConnection) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentityConnection2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityConnection(ctx context.Context, sel ast.SelectionSet, v models.IdentityConnection) graphql.Marshaler {
 	return ec._IdentityConnection(ctx, sel, &v)
 }
 
-func (ec *executionContext) marshalNIdentityConnection2ᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityConnection(ctx context.Context, sel ast.SelectionSet, v *models.IdentityConnection) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentityConnection2ᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityConnection(ctx context.Context, sel ast.SelectionSet, v *models.IdentityConnection) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -965,7 +965,7 @@ func (ec *executionContext) marshalNIdentityConnection2ᚖgithubᚗcomᚋMichael
 	return ec._IdentityConnection(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdgeᚄ(ctx context.Context, sel ast.SelectionSet, v []*models.IdentityEdge) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdgeᚄ(ctx context.Context, sel ast.SelectionSet, v []*models.IdentityEdge) graphql.Marshaler {
 	ret := make(graphql.Array, len(v))
 	var wg sync.WaitGroup
 	isLen1 := len(v) == 1
@@ -989,7 +989,7 @@ func (ec *executionContext) marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋMichaelMur
 			if !isLen1 {
 				defer wg.Done()
 			}
-			ret[i] = ec.marshalNIdentityEdge2ᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdge(ctx, sel, v[i])
+			ret[i] = ec.marshalNIdentityEdge2ᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdge(ctx, sel, v[i])
 		}
 		if isLen1 {
 			f(i)
@@ -1009,7 +1009,7 @@ func (ec *executionContext) marshalNIdentityEdge2ᚕᚖgithubᚗcomᚋMichaelMur
 	return ret
 }
 
-func (ec *executionContext) marshalNIdentityEdge2ᚖgithubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdge(ctx context.Context, sel ast.SelectionSet, v *models.IdentityEdge) graphql.Marshaler {
+func (ec *executionContext) marshalNIdentityEdge2ᚖgithubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityEdge(ctx context.Context, sel ast.SelectionSet, v *models.IdentityEdge) graphql.Marshaler {
 	if v == nil {
 		if !graphql.HasFieldError(ctx, graphql.GetFieldContext(ctx)) {
 			ec.Errorf(ctx, "the requested element is null which the schema does not allow")
@@ -1019,7 +1019,7 @@ func (ec *executionContext) marshalNIdentityEdge2ᚖgithubᚗcomᚋMichaelMure�
 	return ec._IdentityEdge(ctx, sel, v)
 }
 
-func (ec *executionContext) marshalOIdentity2githubᚗcomᚋMichaelMureᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx context.Context, sel ast.SelectionSet, v models.IdentityWrapper) graphql.Marshaler {
+func (ec *executionContext) marshalOIdentity2githubᚗcomᚋgitᚑbugᚋgitᚑbugᚋapiᚋgraphqlᚋmodelsᚐIdentityWrapper(ctx context.Context, sel ast.SelectionSet, v models.IdentityWrapper) graphql.Marshaler {
 	if v == nil {
 		return graphql.Null
 	}

@@ -3,11 +3,11 @@ package resolvers
 import (
 	"context"
 
-	"github.com/MichaelMure/git-bug/api/graphql/connections"
-	"github.com/MichaelMure/git-bug/api/graphql/graph"
-	"github.com/MichaelMure/git-bug/api/graphql/models"
-	"github.com/MichaelMure/git-bug/entities/bug"
-	"github.com/MichaelMure/git-bug/entity/dag"
+	"github.com/git-bug/git-bug/api/graphql/connections"
+	"github.com/git-bug/git-bug/api/graphql/graph"
+	"github.com/git-bug/git-bug/api/graphql/models"
+	"github.com/git-bug/git-bug/entities/bug"
+	"github.com/git-bug/git-bug/entity/dag"
 )
 
 var _ graph.BugResolver = &bugResolver{}
@@ -18,7 +18,7 @@ func (bugResolver) HumanID(_ context.Context, obj models.BugWrapper) (string, er
 	return obj.Id().Human(), nil
 }
 
-func (bugResolver) Comments(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.CommentConnection, error) {
+func (bugResolver) Comments(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.BugCommentConnection, error) {
 	input := models.ConnectionInput{
 		Before: before,
 		After:  after,
@@ -27,18 +27,18 @@ func (bugResolver) Comments(_ context.Context, obj models.BugWrapper, after *str
 	}
 
 	edger := func(comment bug.Comment, offset int) connections.Edge {
-		return models.CommentEdge{
+		return models.BugCommentEdge{
 			Node:   &comment,
 			Cursor: connections.OffsetToCursor(offset),
 		}
 	}
 
-	conMaker := func(edges []*models.CommentEdge, nodes []bug.Comment, info *models.PageInfo, totalCount int) (*models.CommentConnection, error) {
+	conMaker := func(edges []*models.BugCommentEdge, nodes []bug.Comment, info *models.PageInfo, totalCount int) (*models.BugCommentConnection, error) {
 		var commentNodes []*bug.Comment
 		for _, c := range nodes {
 			commentNodes = append(commentNodes, &c)
 		}
-		return &models.CommentConnection{
+		return &models.BugCommentConnection{
 			Edges:      edges,
 			Nodes:      commentNodes,
 			PageInfo:   info,
@@ -51,7 +51,7 @@ func (bugResolver) Comments(_ context.Context, obj models.BugWrapper, after *str
 		return nil, err
 	}
 
-	return connections.CommentCon(comments, edger, conMaker, input)
+	return connections.Connection(comments, edger, conMaker, input)
 }
 
 func (bugResolver) Operations(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.OperationConnection, error) {
@@ -83,10 +83,10 @@ func (bugResolver) Operations(_ context.Context, obj models.BugWrapper, after *s
 		return nil, err
 	}
 
-	return connections.OperationCon(ops, edger, conMaker, input)
+	return connections.Connection(ops, edger, conMaker, input)
 }
 
-func (bugResolver) Timeline(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.TimelineItemConnection, error) {
+func (bugResolver) Timeline(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.BugTimelineItemConnection, error) {
 	input := models.ConnectionInput{
 		Before: before,
 		After:  after,
@@ -95,14 +95,14 @@ func (bugResolver) Timeline(_ context.Context, obj models.BugWrapper, after *str
 	}
 
 	edger := func(op bug.TimelineItem, offset int) connections.Edge {
-		return models.TimelineItemEdge{
+		return models.BugTimelineItemEdge{
 			Node:   op,
 			Cursor: connections.OffsetToCursor(offset),
 		}
 	}
 
-	conMaker := func(edges []*models.TimelineItemEdge, nodes []bug.TimelineItem, info *models.PageInfo, totalCount int) (*models.TimelineItemConnection, error) {
-		return &models.TimelineItemConnection{
+	conMaker := func(edges []*models.BugTimelineItemEdge, nodes []bug.TimelineItem, info *models.PageInfo, totalCount int) (*models.BugTimelineItemConnection, error) {
+		return &models.BugTimelineItemConnection{
 			Edges:      edges,
 			Nodes:      nodes,
 			PageInfo:   info,
@@ -115,7 +115,7 @@ func (bugResolver) Timeline(_ context.Context, obj models.BugWrapper, after *str
 		return nil, err
 	}
 
-	return connections.TimelineItemCon(timeline, edger, conMaker, input)
+	return connections.Connection(timeline, edger, conMaker, input)
 }
 
 func (bugResolver) Actors(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.IdentityConnection, error) {
@@ -147,7 +147,7 @@ func (bugResolver) Actors(_ context.Context, obj models.BugWrapper, after *strin
 		return nil, err
 	}
 
-	return connections.IdentityCon(actors, edger, conMaker, input)
+	return connections.Connection(actors, edger, conMaker, input)
 }
 
 func (bugResolver) Participants(_ context.Context, obj models.BugWrapper, after *string, before *string, first *int, last *int) (*models.IdentityConnection, error) {
@@ -179,5 +179,13 @@ func (bugResolver) Participants(_ context.Context, obj models.BugWrapper, after 
 		return nil, err
 	}
 
-	return connections.IdentityCon(participants, edger, conMaker, input)
+	return connections.Connection(participants, edger, conMaker, input)
+}
+
+var _ graph.BugCommentResolver = &commentResolver{}
+
+type commentResolver struct{}
+
+func (c commentResolver) Author(_ context.Context, obj *bug.Comment) (models.IdentityWrapper, error) {
+	return models.NewLoadedIdentity(obj.Author), nil
 }

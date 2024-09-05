@@ -2,7 +2,7 @@
 package models
 
 import (
-	"github.com/MichaelMure/git-bug/cache"
+	"github.com/git-bug/git-bug/cache"
 )
 
 type ConnectionInput struct {
@@ -13,11 +13,6 @@ type ConnectionInput struct {
 }
 
 type Repository struct {
-	Cache *cache.MultiRepoCache
-	Repo  *cache.RepoCache
-}
-
-type RepositoryMutation struct {
 	Cache *cache.MultiRepoCache
 	Repo  *cache.RepoCache
 }

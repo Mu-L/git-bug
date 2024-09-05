@@ -7,10 +7,10 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/MichaelMure/git-bug/api/graphql/models"
-	"github.com/MichaelMure/git-bug/cache"
-	"github.com/MichaelMure/git-bug/misc/random_bugs"
-	"github.com/MichaelMure/git-bug/repository"
+	"github.com/git-bug/git-bug/api/graphql/models"
+	"github.com/git-bug/git-bug/cache"
+	"github.com/git-bug/git-bug/misc/random_bugs"
+	"github.com/git-bug/git-bug/repository"
 )
 
 func TestQueries(t *testing.T) {
@@ -44,7 +44,7 @@ func TestQueries(t *testing.T) {
                 email
                 avatarUrl
               }
-      
+
               createdAt
               humanId
               id
@@ -81,7 +81,7 @@ func TestQueries(t *testing.T) {
                   displayName
                 }
               }
-      
+
               comments(first: 2) {
                 pageInfo {
                   endCursor
@@ -94,7 +94,7 @@ func TestQueries(t *testing.T) {
                   message
                 }
               }
-      
+
               operations(first: 20) {
                 pageInfo {
                   endCursor
@@ -109,23 +109,23 @@ func TestQueries(t *testing.T) {
                     avatarUrl
                   }
                   date
-                  ... on CreateOperation {
+                  ... on BugCreateOperation {
                     title
                     message
                     files
                   }
-                  ... on SetTitleOperation {
+                  ... on BugSetTitleOperation {
                     title
                     was
                   }
-                  ... on AddCommentOperation {
+                  ... on BugAddCommentOperation {
                     files
                     message
                   }
-                  ... on SetStatusOperation {
+                  ... on BugSetStatusOperation {
                     status
                   }
-                  ... on LabelChangeOperation {
+                  ... on BugLabelChangeOperation {
                     added {
                       name
                       color {
