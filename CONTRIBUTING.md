@@ -16,6 +16,7 @@ getting started as a contributor to this project.
   - [4.2 | Test the development shell](#42--test-the-development-shell)
 - [Useful development commands](#useful-development-commands)
 - [Submitting changes](#submitting-changes)
+  - [Commit messages are the source of truth](#commit-messages-are-the-source-of-truth)
   - [Push early, push often](#push-early-push-often)
   - [Pull requests are squashed](#pull-requests-are-squashed)
   - [Draft vs Ready](#draft-vs-ready)
@@ -265,6 +266,15 @@ repository, and create a pull request.
 If you are in the development shell, you have the `gh` command line tool
 available for use with github.
 
+### Commit messages are the source of truth<a name="commit-messages-are-the-source-of-truth"></a>
+
+Commit subjects and messages are the source of truth for a variety of things,
+including the public-facing changelog ([`//:CHANGELOG.md`][changelog]) and
+release descriptions. Writing thorough commit messages is beneficial to anyone
+reviewing a commit, including future you!
+
+Please be sure to read the [commit message guidelines][doc/contrib/commit].
+
 ### Push early, push often<a name="push-early-push-often"></a>
 
 We encourage pushing small changes. There is no such thing as a contribution
@@ -332,6 +342,7 @@ ______________________________________________________________________
 - [Learn about the data model][doc/design/model]
 - [See how to create a new entity][example-entity]
 
+[changelog]: ./CHANGELOG.md
 [doc/contrib/commit]: ./doc/contrib/commit-message-guidelines.md
 [doc/design/arch]: ./doc/design/architecture.md
 [doc/design/model]: ./doc/design/data-model.md
